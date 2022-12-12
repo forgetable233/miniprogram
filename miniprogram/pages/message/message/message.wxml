@@ -1,0 +1,47 @@
+<view class="status-bar bg-white" style='height: {{statusBarHeight}}px;'></view>
+<!-- 顶部操作条 -->
+<view class="cu-bar bg-white search" style="text-align: center;">
+    <view class="content">
+      消息列表
+    </view>
+</view>
+<block wx:if="{{isRegist==true}}">
+<!-- <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> 列表左滑
+    </view>
+  </view> -->
+  <view class="cu-list menu-avatar">
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{3}}" bindtap="goToChat" data-index="{{index}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}"
+    >
+       <!--头像 -->
+       <view class="cu-avatar round lg" style="background-image:url({{avaterUrl[index]}})"></view>
+       <!--昵称和内容 -->
+      <view class="content">
+        <view class="text-grey">{{chatName[index]}}</view>
+        <view class="text-gray text-sm">
+          <view class="text-gray text-sm flex">
+          <text class="text-cut">{{chat[index]}}</text>
+          </view>
+        </view>
+      </view>
+      <!--最新时间和未读消息条数 -->
+      <view class="action">
+        <view class="text-grey text-xs">22:20</view>
+        <view class="cuIcon-notice_forbid_fill text-gray"></view>
+      </view>
+      <!--滑动条内容 -->
+      <view class="move">
+        <view class="bg-grey">置顶</view>
+        <view class="bg-red">删除</view>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+<van-empty
+class="custom-image"
+image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+description="请先登录"
+/>
+</block>

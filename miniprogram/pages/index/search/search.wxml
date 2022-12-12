@@ -1,0 +1,121 @@
+<!--pages/search/search.wxml-->
+  <view class="status-bar bg-white" style='height: {{statusBarHeight}}px;'></view>
+<!-- <view class="bg-white" style="height:{{status + navBarHeight}}px">
+    <view style="height: {{status}}px"></view>
+    <view class="cu-bar search bg-white" style="height:{{navBarHeight}}px">
+        <view class="action margin-bottom" bindtap="jumpBack" class="text-align: center;">
+            <text class="cuIcon-back text-gray"></text> 返回
+        </view>
+        <view class="search-form round">
+            <text class="cuIcon-search"></text>
+            <input type="text" placeholder="输入土地关键词" confirm-type="search"></input>
+        </view>
+        <view class="action">
+            <button class="cu-btn bg-green shadow-blur round" style="width: auto;">搜索</button>
+        </view>
+    </view>
+</view> -->
+
+<view class="cu-bar bg-white" style="min-height: 0rpx; height:80rpx ">
+    <view class="content text-bold">
+      土地流转
+    </view>
+  </view>
+<view class="cu-bar bg-white" style="min-height: 0rpx; height:80rpx ">
+    <view class="action" bindtap="jumpBack">
+        <text class="cuIcon-back text-gray"></text> 返回
+    </view>
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索闲置土地信息" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow-blur round" style="width: auto;">搜索</button>
+    </view>
+</view>
+
+<!-- <view class="select margin-top">
+    <view class="box" wx:for="{{select}}" wx:key="title" data-index="{{index}}" bindtap="skipSelect">
+        <view class="name">{{item.title}}</view>
+        <icon class="icon-sanjiaoxing" style="transform: scale(0.8,0.8)"></icon>
+    </view>
+</view>
+<view class="popup" wx:if="{{open}}">
+    <block wx:if="{{indexSign==0}}">
+        <view class="part">
+            <view class="title">当前地区</view>
+            <view class="wrapper">
+                <view class="item">
+                    <image src="../../../images/icon/posision.png"></image>
+                    {{region[2]}}
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{indexSign==1}}">
+        <view class="part">
+            <view class="title">选择土地类型</view>
+            <view class="wrapper"> 
+                <view wx:for="{{selectType}}" wx:key="{{index}}" data-index="{{index}}" bindtap="TypeSelect" style="margin-right:45rpx;">
+                    <view class="item checked" wx:if="{{item.checked==1}}">{{item.name}}
+                    </view>
+                    <view class="item botton" wx:if="{{item.checked==0}}">{{item.name}} </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{indexSign==2}}">
+        <view class="part">
+            <view class="title">选择面积</view>
+            <view class="wrapper"> 
+                <view wx:for="{{selectArea}}" wx:key="{{index}}" data-index="{{index}}" bindtap="AreaSelect" style="margin-right:45rpx;">
+                    <view class="item checked" wx:if="{{item.checked==1}}">{{item.name}}
+                    </view>
+                    <view class="item botton" wx:if="{{item.checked==0}}">{{item.name}} </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{indexSign==3}}">
+        <view class="part">
+            <view class="title">选择价格(元/亩/年)</view>
+            <view class="wrapper"> 
+                <view wx:for="{{selectMoney}}" wx:key="{{index}}" data-index="{{index}}" bindtap="MoneySelect" style="margin-right:45rpx;">
+                    <view class="item checked" wx:if="{{item.checked==1}}">{{item.name}}
+                    </view>
+                    <view class="item botton" wx:if="{{item.checked==0}}">{{item.name}} </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    
+</view> -->
+
+<van-dropdown-menu style="font-size: 45rpx;">
+  <van-dropdown-item id="item" title="{{ itemTitle1 }}">
+    <picker name="location" mode="region" value="{{region}}" bindchange="bindRegionChange">
+        <van-cell title="{{region[2]}}" icon="location-o" />
+    </picker>
+  </van-dropdown-item>
+  <van-dropdown-item id="item" title="{{itemTitle2 }}">
+    <van-tree-select
+    items="{{ items }}"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    bind:click-nav="onClickNav"
+    bind:click-item="onClickItem"
+    />
+  </van-dropdown-item>
+  <van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" bind:change="transferValue"/>
+  <van-dropdown-item value="{{ value4 }}" options="{{ option4 }}" bind:change="acreageValue"/>
+</van-dropdown-menu>
+<block wx:if="{{isEmpty==false}}">
+<view wx:if="{{all_land.length > 0}}">
+    <land-displayer cardType='info' wx:for="{{all_land}}" wx:key="_id" land="{{item}}"/>
+</view>
+<button loading wx:if="{{loadmore}}"> loading... </button>
+<view wx:else style="text-align: center;"> -----我是有底线的----- </view>
+</block>
+<block wx:else>
+    <van-empty image="search" description="抱歉，已选条件下没有闲置土地信息，请更换地区或者减少限制条件搜索" />
+</block>

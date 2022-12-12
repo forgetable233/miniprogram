@@ -1,0 +1,9 @@
+<view class="bg-white" style='height: {{status + navHeight}}px;'>
+    <view style='height: {{status}}px;'></view>
+    <view class="cu-bar" style='height:{{navHeight}}px'>
+        <view class="action">
+            <text class="cuIcon-back text-gray" bindtap="back"></text>
+        </view>
+        <view class="content text-bold">{{titleText}}</view>
+    </view>
+</view>

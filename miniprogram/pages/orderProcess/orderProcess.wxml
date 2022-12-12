@@ -1,0 +1,39 @@
+<headNavigator titleText="订单进程"/>
+<!-- TODO 用户在此中的身份-->
+<view wx:if="{{landInfo === undefined}}">
+    <view class="title text-gray">暂无订单信息</view>
+</view>
+<view wx:else>
+    <swiper class="screen-swiper square-dot bg-white" indicator-dots="true" circular="true" duration="500}"
+            autoplay="true" interval="5000">
+        <swiper-item wx:for="{{landInfo.picCount - 0}}" wx:key="unique">
+            <image mode="aspectFill"
+                   src="cloud://cloud1-7gbhxuxd395adfde.636c-cloud1-7gbhxuxd395adfde-1310914803/lands/{{landInfo._id}}/{{item}}.jpg"/>
+        </swiper-item>
+    </swiper>
+</view>
+
+<view class="bg-white canui-goods-box" style="padding-top:30px;">
+    <text class="text-price text-black text-xl">{{landInfo.cost}}</text>
+</view>
+
+        <!--商品名称-->
+<view class="bg-white canui-goods-box canui-xzwz text-black">土地名称: {{landInfo.name}}</view>
+
+        <!--商品属性-->
+<view class="bg-white grid col-3 canui-goods-box text-grey text-sm">
+    <view class="padding-sm text-center">{{landInfo.location.province}}</view>
+    <view class="padding-sm text-center">{{landInfo.location.city}}</view>
+    <view class="padding-sm text-center">{{landType}}</view>
+</view>
+
+<view class="cu-timeline">
+<!--    TODO 审核流程的格式-->
+    <view class="cu-time">开始审核</view>
+    <view class="cu-item cur cuIcon-noticefill">
+        <view class="content shadow-blur {{bgColor}}" bindtap="switchColor">
+            <text>向土地流出，流入乡镇提交申请</text>
+        </view>
+    </view>
+    <view class="cu-time">审核结束</view>
+</view>

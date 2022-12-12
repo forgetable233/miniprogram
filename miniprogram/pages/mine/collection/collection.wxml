@@ -1,0 +1,9 @@
+<!--pages/collection/collection.wxml-->
+<!--<text>pages/collection/collection.wxml</text>-->
+<!--<view>This is the page for collections</view>-->
+<headNavigator titleText="收藏"/>
+<view wx:if="{{all_likes.length > 0}}">
+  <land-displayer wx:for="{{all_likes}}" wx:key="_id" land="{{item}}" bindlongpress="deleteCollection" data-id="{{item._id}}"/>
+</view>
+<van-empty wx:if="{{all_likes.length === 0}}" image="error" description="您尚未有收藏记录"/>
+

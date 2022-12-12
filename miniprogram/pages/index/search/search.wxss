@@ -1,0 +1,244 @@
+/* pages/search/search.wxss */
+/* pages/ownerService/index.wxss */
+[class*="icon"] { 
+	font-family: "iconfont";
+	font-size: 30rpx;/*继承父级*/
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;/*抗锯齿，字体清晰*/
+  -moz-osx-font-smoothing: grayscale;/*抗锯齿，比较清晰*/
+}
+
+@font-face {
+  font-family: "iconfont"; /* Project id 3347522 */
+  src: url('//at.alicdn.com/t/font_3347522_b7mqhlsi8uf.woff2?t=1651733636835') format('woff2'),
+       url('//at.alicdn.com/t/font_3347522_b7mqhlsi8uf.woff?t=1651733636835') format('woff'),
+       url('//at.alicdn.com/t/font_3347522_b7mqhlsi8uf.ttf?t=1651733636835') format('truetype');
+}
+
+.icon-sanjiaoxing:before {
+  content: "\e6bd";
+}
+.icon-didian:before {
+  content: "\e634";
+}
+
+page {
+  background: #fff;
+}
+
+/* 选择 */
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.select .box {
+  display: flex;
+  align-items: center;
+}
+
+.select .box .name {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.select .box .active {
+  color: #212121;
+  font-size: 26rpx;
+}
+
+.select .box icon {
+  color: #999;
+  font-size: 35rpx;
+  position: relative;
+  top: -5rpx;
+}
+
+/* 展开层 */
+
+.popup {
+  padding: 30rpx 20rpx 10rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1rpx solid rgba(242, 242, 242, 0.5);
+}
+
+.popup .part .title {
+  font-size: 28rpx;
+  color: #212121;
+  margin-bottom: 20rpx;
+}
+
+.popup .part .wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.popup .part .wrapper .item {
+  width: auto;
+  height: auto;
+  padding: 25rpx;
+  line-height: 35rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 5rpx;
+  margin-bottom: 25rpx;
+  justify-content: space-around;
+}
+
+.popup .part .wrapper .item image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.checked{
+  background-color: rgb(0, 165, 0);
+  color: white;
+}
+.botton{
+  color: #212121;
+  background: #f2f2f2;
+}
+
+/* 内容 */
+
+.service {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.service .itemNav .bottomline {
+  width: 100%;
+  height: 1rpx;
+  background: rgba(242, 242, 242, 0.5);
+}
+
+.service .itemNav .more {
+  color: #454545;
+  font-size: 24rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.service .itemNav .more icon {
+  vertical-align: sub;
+}
+
+.service .itemNav > view:nth-child(1) {
+  display: flex;
+  position: relative;
+  margin-bottom: 30rpx;
+  margin-top: 20rpx;
+}
+
+.service .itemNav > view .pic {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+}
+
+.service .itemNav > view .pic image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 5rpx;
+}
+
+.service .itemNav > view .right .title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+
+.service .itemNav > view .right .tags {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.service .itemNav > view .right .tags .tag {
+  padding: 0 15rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  color: #454545;
+  font-size: 20rpx;
+  border-radius: 25rpx;
+  border: 1rpx solid #f5f5f5;
+  margin-right: 10rpx;
+}
+
+.service .itemNav > view .right .desc {
+  color: #454545;
+  font-size: 22rpx;
+  margin-bottom: 10rpx;
+}
+
+.service .itemNav > view .right .serviceTime {
+  color: #454545;
+  font-size: 22rpx;
+}
+
+.service .itemNav > view .supply {
+  color: #999;
+  font-size: 22rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.service .itemNav > view .supply .distance {
+  float: right;
+}
+
+.service .itemNav > view .supply .rate {
+  clear: both;
+  float: right;
+}
+
+.service .itemNav > view:nth-child(3) {
+  box-sizing: border-box;
+}
+
+.service .itemNav > view:nth-child(3) .li {
+  display: flex;
+  padding: 20rpx 0;
+  margin-left: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid rgba(242, 242, 242, 0.4);
+}
+
+.service .itemNav > view:nth-child(3) .li .left {
+  text-align: center;
+  margin-right: 50rpx;
+}
+
+.service .itemNav > view:nth-child(3) .li .left .price {
+  font-size: 30rpx;
+  color: #f69445;
+}
+
+.service .itemNav > view:nth-child(3) .li .left .price text {
+  font-size: 24rpx;
+}
+
+.service .itemNav > view:nth-child(3) .li .left .oldPrice {
+  color: #999;
+  font-size: 20rpx;
+}
+
+.service .itemNav > view:nth-child(3) .li .right .serviceTitle {
+  font-size: 26rpx;
+}
+
+.service .itemNav > view:nth-child(3) .li .right .serviceTitle text {
+  color: #f69445;
+}
+
+.service .itemNav > view:nth-child(3) .li .right .sale {
+  font-size: 20rpx;
+  color: #999;
+}

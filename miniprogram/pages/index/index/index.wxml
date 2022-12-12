@@ -1,0 +1,110 @@
+<!--pages/frontPage/frontPage.wxml-->
+
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item class="backImage" wx:for="{{swiperList}}" wx:key="id">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}">
+        </video>
+  </swiper-item>
+</swiper>
+<view class="onImage">
+  <view style="display:flex">
+  <picker name="location" mode="region" value="{{region}}" bindchange="bindRegionChange" style="width: 100%;">
+    <view class="flex solid-bottom" style="justify-content: space-evenly;">
+    <view class="bg-white region" style="margin: 30rpx;">{{region[0]}}</view>
+    <view class="bg-white region" style="margin: 30rpx;">{{region[1]}}</view>
+    <view class="bg-white region" style="margin: 30rpx;">{{region[2]}}</view>
+    </view>
+  </picker>
+</view>
+  <!-- <view class="checkBox">
+  <checkbox-group bindchange="checkboxChange" style="display: flex;margin-top: 10rpx;margin-bottom: 50rpx;margin-left: 20rpx;">
+    <label  wx:for="{{items}}" wx:key="value" class="align-center" style="margin: 20rpx;height: 15rpx;display: flex;" >
+      <checkbox value="{{item.value}}" checked="{{item.checked}}" style="transform: scale(0.6,0.6);margin-top: 0rpx;"></checkbox>
+      <text  style="font-size: 35rpx;display: block;">{{item.name}}</text>
+    </label>
+  </checkbox-group>
+  </view> -->
+  <view class="blueBotton" bindtap="jumpToSearch">搜索闲置土地</view>
+</view>
+<view style="position: relative;z-index: 3;top:315rpx;">
+<van-grid>
+  <van-grid-item class="iconfont" icon-prefix="icon" icon="fabuxinxi-copy" text="发布信息" url="../../mine/publishLand/publishLand" />
+  <van-grid-item class="iconfont" icon-prefix="icon" icon="fengxianpinggu" text="专业评估" bindtap="waitToWrite"/>
+  <van-grid-item class="iconfont" icon-prefix="icon" icon="fenghuangxiangmutubiao_dengjichu" text="登记需求" bindtap="waitToWrite"/>
+  <van-grid-item class="iconfont" icon-prefix="icon" icon="zixun" text="法律咨询" bindtap="waitToWrite"/>
+</van-grid>
+</view>
+<view style="position: relative;z-index: 3;top:330rpx;">
+<view class="cu-bar bg-white box">
+  <view class="action sub-title">
+    <text class="text-xl text-bold text-green">土地资讯</text>
+    <text class="bg-green" style="width:2rem"></text>
+    <!-- last-child选择器-->
+  </view>
+</view>
+<view class="cu-card article no-card" >
+  <view class="cu-item shadow" bindtap="jumpToNews1">
+    <view class="title">
+      <view class="text-cut">农村土地经营权流转管理办法</view>
+    </view>
+    <view class="content">
+      <image src="cloud://cloud1-7gbhxuxd395adfde.636c-cloud1-7gbhxuxd395adfde-1310914803/picture/new1.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> 《农村土地经营权流转管理办法》已经农业农村部2021年第1次常务会议审议通过，现予发布，自2021年3月1日起施行。</view>
+        <view>
+          <view class="cu-tag bg-red light sm round">土地流转</view>
+          <view class="cu-tag bg-green light sm round">政策</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-item shadow" bindtap="jumpToNews2">
+    <view class="title">
+      <view class="text-cut">农业农村部 财政部发布2020年重点强农惠农政策</view>
+    </view>
+    <view class="content">
+      <image src="cloud://cloud1-7gbhxuxd395adfde.636c-cloud1-7gbhxuxd395adfde-1310914803/picture/new2.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> 2020年，贯彻落实中央农村工作会议、中央1号文件、国务院政府工作报告，围绕实施乡村振兴战略，打赢脱贫攻坚战，如期实现全面小康目标，应对新冠肺炎疫情新形势，扎实做好“六稳”工作、落实“六保”任务，国家将继续加大支农投入，强化项目统筹整合，加快推进农业农村现代化。</view>
+        <view>
+          <view class="cu-tag bg-red light sm round">支农惠农</view>
+          <view class="cu-tag bg-green light sm round">政策</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-item shadow" bindtap="jumpToNews3">
+    <view class="title">
+      <view class="text-cut">所有农业补贴政策，全都在这了！最后一项所有人都受益！ </view>
+    </view>
+    <view class="content">
+      <image src="cloud://cloud1-7gbhxuxd395adfde.636c-cloud1-7gbhxuxd395adfde-1310914803/picture/new3.jpeg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> 据农业农村部网站消息，财政部、农业农村部近日联合发布2021年重点强农惠农政策。其中提出，继续实施玉米和大豆生产者补贴、稻谷补贴和产粮大县奖励等政策，巩固农业供给侧结构性改革成效。</view>
+        <view>
+          <view class="cu-tag bg-red light sm round">支农惠农</view>
+          <view class="cu-tag bg-green light sm round">资讯</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-item shadow" bindtap="jumpToNews4">
+    <view class="title">
+      <view class="text-cut">2021年29个乡村振兴政府补贴项目申报指南</view>
+    </view>
+    <view class="content">
+      <image src="cloud://cloud1-7gbhxuxd395adfde.636c-cloud1-7gbhxuxd395adfde-1310914803/picture/new4.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> 据农业农村部网站消息，财政部、农业农村部近日联合发布2021年重点强农惠农政策。其中提出，继续实施玉米和大豆生产者补贴、稻谷补贴和产粮大县奖励等政策，巩固农业供给侧结构性改革成效。</view>
+        <view>
+          <view class="cu-tag bg-red light sm round">支农惠农</view>
+          <view class="cu-tag bg-green light sm round">资讯</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+</view>

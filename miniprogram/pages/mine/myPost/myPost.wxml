@@ -1,0 +1,13 @@
+<headNavigator titleText="我的发布"/>
+<van-empty wx:if="{{!hasPost}}" image="error" description="您尚未发布土地信息"/>
+<view wx:for="{{allPost}}" wx:for-item="post">
+    <van-card bindtap="jumpToDetail" data-id="{{post._id}}" price="{{post.cost}}"
+              desc="{{post.description}}"
+              title="{{post.name}}"
+              thumb="../../../../images/img1.png" thumb-mode="aspectFill">
+        <view slot="footer">
+            <van-button bind:click="deltePost" data-id="{{post._id}}" round="true" type="danger" custom-style="width: 75rpx" size="mini">删除</van-button>
+            <van-button bind:click="editPost" data-id="{{post._id}}" round="true" type="warning" custom-style="width: 75rpx" size="mini">修改</van-button>
+        </view>
+    </van-card>
+</view>

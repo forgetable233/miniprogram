@@ -1,0 +1,56 @@
+/* pages/mine/mine.wxss */
+[class*="icon"] { 
+	font-family: "iconfont";
+	font-size: 30px;/*继承父级*/
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;/*抗锯齿，字体清晰*/
+  -moz-osx-font-smoothing: grayscale;/*抗锯齿，比较清晰*/
+}
+@font-face {
+  font-family: "iconfont"; /* Project id 3347445 */
+  src: url('//at.alicdn.com/t/font_3347445_6uj9xxfk42d.woff2?t=1650878211510') format('woff2'),
+       url('//at.alicdn.com/t/font_3347445_6uj9xxfk42d.woff?t=1650878211510') format('woff'),
+       url('//at.alicdn.com/t/font_3347445_6uj9xxfk42d.ttf?t=1650878211510') format('truetype');
+}
+
+/* .iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+.icon-shizhong:before {
+  content: "\e74f";
+}
+
+.icon-shouye:before {
+  content: "\e626";
+}
+
+.icon-shoucang:before {
+  content: "\eca7";
+}
+
+.user-phone {
+  color: white;
+  font-size: 28rpx;
+}
+
+.user-phone-btn {
+  display: inline;
+  background-color:white;
+  color: var(--grey);
+  font-size: 28rpx;
+  font-weight: 400;
+  border-radius: 0;
+  margin-left: 0rpx;
+  padding-left: 0rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.user-phone-btn::after {
+  border: none;
+  border-radius: 0;
+}

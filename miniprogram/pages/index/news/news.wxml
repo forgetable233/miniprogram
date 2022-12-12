@@ -1,0 +1,25 @@
+<!--pages/index/news/news.wxml-->
+  <!-- <view class="status-bar bg-white" style='height: {{statusBarHeight}}px;'></view> -->
+  <!-- <view class="cu-bar bg-white" style="height: 80rpx;">
+    <view class="action">
+      <text class="cuIcon-back text-gray"></text> 返回
+    </view>
+    <view class="content text-bold">土地资讯
+    </view>
+  </view> -->
+<van-sticky>
+  <van-nav-bar
+  title="土地资讯"
+  left-text="返回"
+  left-arrow
+  bind:click-left="jumpBack"
+  />
+</van-sticky>
+
+<view class="Border">
+<view class="contentBorder">
+<view class="content-info">
+  <towxml nodes="{{article}}"/>
+</view>
+</view>
+</view>

@@ -1,0 +1,7 @@
+<headNavigator titleText="历史"/>
+<view wx:if="{{paths.length > 0}}">
+  <view style="height: 10px"/>
+  <button class="bg-orange" bindtap="deletePath" data-id="">清除历史记录</button>
+  <land-displayer bindlongpress="deletePath" data-id="{{item._id}}" wx:for="{{paths}}" wx:key="_id" land="{{item}}"/>
+</view>
+<van-empty wx:if="{{paths.length === 0}}" image="error" description="您尚未有浏览记录"/>

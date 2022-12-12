@@ -1,0 +1,159 @@
+<headNavigator titleText="发布信息"/>
+<van-tabs swipeable active="{{currentPage}}" type="line" border="true" animated bind:click="onClick" bind:disabled="onDisabled">
+    <van-tab title="1.土地类型">
+        <van-cell title="请选择土地大类型" required="true"/>
+        <view class="cu-form-group grid col-4">
+            <block wx:for="{{bigLandType}}" wx:for-item="bigType">
+                <view bindtap="switchBigType" data-id="{{bigType.id}}" data-checked="{{bigType.checked}}"
+                      wx:if="{{bigType.checked === false}}" class="padding-sm shadow text-center">
+                    {{bigType.type}}
+                </view>
+                <view bindtap="switchBigType" data-id="{{bigType.id}}" data-checked="{{bigType.checked}}" wx:else
+                      class="bg-orange padding-sm shadow text-center" style="border-radius: 5px">{{bigType.type}}
+                </view>
+            </block>
+        </view>
+        <van-cell title="请选择土地小类型" required="true"/>
+        <view class="cu-form-group grid col-4">
+            <block wx:for="{{smallLandType[currentBigType].types}}" wx:for-item="smallType">
+                <view bindtap="switchSmallType" data-id="{{smallType.id}}" data-checked="{{smallType.checked}}"
+                      wx:if="{{smallType.checked === false}}" class="padding-sm shadow text-center">
+                    {{smallType.type}}
+                </view>
+                <view bindtap="switchSmallType" data-id="{{smallType.id}}" data-checked="{{smallType.checked}}"
+                      wx:if="{{smallType.checked === true}}" class="bg-orange padding-sm shadow text-center"
+                      style="border-radius: 5px">
+                    {{smallType.type}}
+                </view>
+            </block>
+        </view>
+        <view style="height:10px"></view>
+        <button bindtap="switchPage" class="bg-orange text-center text-white text-xl">下一步</button>
+    </van-tab>
+    <van-tab disabled="{{!typeChosen}}" title="2.土地详情">
+        <view class="margin-top">
+            <van-cell-group>
+                <van-field border="{{false}}" clickable="true" center="true" auto-focus="true"
+                           type="text"
+                           placeholder="请输入标题"
+                           label="标题"
+                           required="true"
+                           model:value="{{title}}"
+                           bind:change="inputTitle"
+                />
+                <van-field border="{{false}}" clickable="true" center="true" auto-focus="true"
+                           type="digit"
+                           placeholder="请输入土地面积（单位：亩）"
+                           label="面积"
+                           required="true"
+                           model:value="{{acreage}}"
+                           bind:change="inputArcage"
+                />
+                <van-field border="{{false}}" clickable="true" center="true" auto-focus="true"
+                           type="digit"
+                           placeholder="请输入土地价格"
+                           label="价格"
+                           required="true"
+                           model:value="{{cost}}"
+                           bind:change="inputCost"
+                />
+                <van-field border="{{false}}" clickable="true" center="true" auto-focus="true"
+                           type="text"
+                           placeholder="请输入土地具体位置"
+                           label="具体位置"
+                           required="true"
+                           model:value="{{description}}"
+                           bind:change="inputDescription"
+                />
+                <van-cell title-width="150rpx" title="土地位置" required="true" is-link="true">
+                    <picker mode="region" model:value="{{region}}" bindchange="bindRegionChange">
+                        <view>{{region}}</view>
+                    </picker>
+                </van-cell>
+                <van-cell title-width="150rpx" title="终止时期" required="true" is-link="true">
+                    <picker mode="date" model:value="{{date}}" start="{{date}}" end="{{endDate}}"
+                            bindchange="bindDateChange">
+                        <view>{{date}}</view>
+                    </picker>
+                </van-cell>
+<!--                TODO api中土地的东西没有-->
+                <van-cell title="请在地图中选出土地" bind:click="jumpToMap">
+                    <van-icon name="location-o"/>
+                </van-cell>
+                <van-field border="{{false}}" clickable="true" center="true" auto-focus="true"
+                           type="text"
+                           placeholder="请输入土地详细信息"
+                           label="详细信息"
+                           required="true"
+                           model:value="{{detail}}"
+                           bind:change="inputDetail"
+                />
+                <van-cell title="请选择流转类型" required="true"/>
+                <view class="cu-form-group grid col-4">
+                    <block wx:for="{{circulationTypes}}" wx:for-item="type">
+                        <view bindtap="switchCirculationType" data-id="{{type.id}}" data-checked="{{type.checked}}"
+                              wx:if="{{type.checked === false}}" class="padding-sm shadow text-center">
+                            {{type.type}}
+                        </view>
+                        <view bindtap="switchCirculationType" data-id="{{type.id}}" data-checked="{{type.checked}}"
+                              wx:if="{{type.checked === true}}" class="bg-orange padding-sm shadow text-center"
+                              style="border-radius: 5px">
+                            {{type.type}}
+                        </view>
+                    </block>
+                </view>
+            </van-cell-group>
+        </view>
+        <view class="cu-bar bg-white margin-top">
+            <view class="action text-black">请上传实景</view>
+            <view class="action">{{imgList.length}}/4</view>
+        </view>
+        <view class="cu-form-group">
+            <view class="grid col-4 grid-square flex-sub">
+                <view class="bg-img" wx:for="{{imgList}}" wx:for-item="image" wx:key="*this" bindtap="viewImage"
+                      data-index="{{image}}">
+                    <image src="{{image}}" mode="aspectFill"/>
+                    <view class="cu-tag bg-red" catchtap="deleteImage" data-index="{{image}}">
+                        <text class="cuIcon-close"></text>
+                    </view>
+                </view>
+                <view class="solids" bindtap="chooseImage" wx:if="{{imgList.length<4}}">
+                    <text class="cuIcon-cameraadd"></text>
+                </view>
+            </view>
+        </view>
+        <view style="height:10px"></view>
+        <button bindtap="switchPage" class="bg-orange text-center text-white text-xl">下一步</button>
+    </van-tab>
+    <van-tab disabled="{{!infoFinished}}" title="3.完成">
+        <view class="margin-top">
+            <van-cell-group inset="true" title="请确定信息是否正确">
+                <van-cell title="种类" value="{{bigType}},{{smallType}}"></van-cell>
+                <van-cell title="标题:" value="{{title}}"></van-cell>
+                <van-cell title="面积:" value="{{acreage}}亩"></van-cell>
+                <van-cell title="价格:" value="{{cost}}"></van-cell>
+                <van-cell title="具体位置:" value="{{description}}"></van-cell>
+                <van-cell title="位置:" title-width="150rpx" value="{{region}}"></van-cell>
+                <van-cell title="终止时期:" value="{{date}}"></van-cell>
+                <van-cell title="流转类型" value="{{circulationType}}"></van-cell>
+                <van-cell title="图片如下"></van-cell>
+                <view class="grid col-4 grid-square flex-sub">
+                    <view class="bg-img" wx:for="{{imgList}}" wx:for-item="image" wx:key="*this" bindtap="viewImage"
+                          data-index="{{image}}">
+                        <image src="{{image}}" mode="aspectFill"/>
+                        <view class="cu-tag bg-red" catchtap="deleteImage" data-index="{{image}}">
+                            <text class="cuIcon-close"></text>
+                        </view>
+                    </view>
+                    <view class="solids" bindtap="chooseImage" wx:if="{{imgList.length<4}}">
+                        <text class="cuIcon-cameraadd"></text>
+                    </view>
+                </view>
+            </van-cell-group>
+        </view>
+        <view style="height:10px"></view>
+        <view class="block">
+            <button class="bg-orange text-center margin-bottom-sm" bindtap="submit">提交</button>
+        </view>
+    </van-tab>
+</van-tabs>

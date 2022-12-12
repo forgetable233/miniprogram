@@ -1,0 +1,59 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="bg-white">
+    <view class="flex solid-bottom padding align-center">
+      <view class="cu-avatar xl round margin-left" style="background-image:url({{user.avatarUrl}});"></view>
+      <view class="bg-white padding-sm text-xl margin-xl radius" bindtap="jumpToRegist">{{user.nickname}}</view>
+    </view>
+  </view>
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view  bindtap="jumpToCollectionPage" class="flex flex-sub flex-direction solid-right">
+      <view class="icon-shoucang"></view>
+      <view class="margin-top-sm">收藏</view>
+    </view>
+    <view bindtap="jumpToPathPage" class="flex flex-sub flex-direction solid-right">
+      <view class="icon-shizhong"></view>
+      <view class="margin-top-sm">足迹</view>
+    </view>
+    <view bindtap="jumpToOrdersPage" class="flex flex-sub flex-direction solid-right">
+      <view class="icon-shouye"></view>
+      <view class="margin-top-sm">订单</view>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow"  bindtap="jumpToPublish">
+      <view class="content">
+        <text class="text-grey">提交土地信息</text>
+      </view>
+    </view>
+    <view class="cu-item arrow"  bindtap="jumpToPost">
+      <view class="content">
+        <text class="text-grey">查看我的发布</text>
+      </view>
+    </view>
+    <view class="cu-item arrow"  bindtap="jumpToMyApply">
+      <view class="content">
+        <text class="text-grey">查看我的申请</text>
+      </view>
+    </view>
+    <view class="cu-item arrow"  bindtap="jumpToApply">
+      <view class="content">
+        <text class="text-grey">查看购买申请</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <button class='user-phone-btn' open-type="feedback">
+            <text class="text-grey">反馈与意见</text>
+        </button>
+      </view>
+    </view>
+    <view class="cu-item arrow" bindtap="jumpToAbout">
+      <view class="content">
+        <text class="text-grey">关于小程序</text>
+      </view>
+    </view>
+  </view>
+  
+</scroll-view>
+
+<!--<button bindtap="test">test</button>-->

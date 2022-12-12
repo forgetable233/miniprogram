@@ -1,0 +1,11 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+
+.navMine{
+    /* fixed（固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位 */
+    position: fixed;
+    top: 0rpx;
+    z-index: 1;
+    width: 100%;
+    line-height: 70rpx;
+}

@@ -1,0 +1,31 @@
+/* pages/index/news/news.wxss */
+.title{
+  font-size: 45rpx;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  height: 80rpx;
+}
+
+.Border{
+  margin: 0rpx 20rpx 0rpx 20rpx;
+  background-color: #ffffff;
+  box-shadow:0 3rpx 5rpx 1rpx rgb(200, 195, 195);
+}
+
+.content{
+  font-size: 35rpx;
+  background-color: white;
+  display: block;
+  letter-spacing:1rpx;
+  line-height:150%;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.contentBorder{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}

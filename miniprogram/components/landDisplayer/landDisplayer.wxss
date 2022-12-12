@@ -1,0 +1,7 @@
+@import "../../colorui/main.wxss";
+
+.van-swipe-cell__right {
+    height: 100%;
+    position: absolute;
+    background: red;
+}

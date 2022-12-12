@@ -1,0 +1,120 @@
+/* pages/frontPage/frontPage.wxss */
+@font-face {
+  font-family: "iconfont"; /* Project id 3391656 */
+  src: url('//at.alicdn.com/t/font_3391656_lb7c4jmxfph.woff2?t=1652204768489') format('woff2'),
+       url('//at.alicdn.com/t/font_3391656_lb7c4jmxfph.woff?t=1652204768489') format('woff'),
+       url('//at.alicdn.com/t/font_3391656_lb7c4jmxfph.ttf?t=1652204768489') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fabuxinxi-copy:before {
+  content: "\e6f6";
+}
+
+
+.icon-yianquanpinggushu-copy:before {
+  content: "\e6f5";
+}
+
+.icon-fenghuangxiangmutubiao_dengjichu:before {
+  content: "\e66f";
+}
+.icon-fengxianpinggu:before {
+  content: "\e613";
+}
+
+.icon-zixun:before {
+  content: "\e61c";
+}
+
+.imagePlace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar1 {background: #A3D0C3;}
+
+.bar1 input {
+  border: 2rpx solid #7BA7AB;
+  border-radius: 5rpx;
+  background: #F9F0DA;
+  color: #9E9C9C;
+}
+
+.bar1 button {
+  top: 0;
+  right: 0;
+  background: #7BA7AB;
+  border-radius: 0 5rpx 5rpx 0;
+}
+.bar1 button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16rpx;
+  color: #F9F0DA;
+}
+
+.backImage{
+  position: relative;
+  z-index: 1;
+}
+.onImage{
+  position: absolute;
+  z-index: 2;
+  top:300rpx;
+  width: 700rpx; 
+  height: 300rpx; 
+  left: 12rpx;
+  padding: 25rpx 10rpx 45rpx 10rpx;
+	border-radius: 10rpx;
+  background-color: #ffffff;
+  box-shadow:0rpx 2rpx 5rpx 5rpx #c8c3c3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.onImage .chooseSquare{
+  padding: 5rpx;
+  border-radius: 5rpx;
+  display: flex;
+}
+.blueBotton{
+   display: flex;
+   border-radius: 5rpx;
+   background-color: #387dd6;
+   /** text-align: center;   水平居中 **/
+   justify-content: center;
+   margin-left: 40rpx;
+   width: 600rpx;
+   font-size: 34rpx;
+   padding-top: 20rpx;
+   padding-bottom: 20rpx;
+   color:#ffffff;
+}
+.checkBoxGroup{
+  display: flex;
+  flex-direction: row;
+  width: 100rpx;
+}
+.checkBox{
+  display: flex;
+  flex: 1;
+}
+.checkText{
+  font-size: 10rpx;
+}
+
+.region{
+  margin: 10rpx;
+  font-weight: bold;
+  text-align: center;
+  font-size: 45rpx;
+}

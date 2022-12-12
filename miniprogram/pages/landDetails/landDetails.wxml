@@ -1,0 +1,63 @@
+<headNavigator titleText="土地详情"/>
+
+<view class="align-center justify-center" wx:if="{{ land === undefined }}">
+     <view class="title">error occurred!!!</view>
+</view>
+<!--<view wx:else>-->
+<!--    <view>名称：{{land.name}}</view>-->
+<!--    <view>描述：{{land.description}}</view>-->
+<!--    <view>面积：{{land.acreage}}</view>-->
+<!--    <view>每亩租金：{{land.cost}}</view>-->
+<!--    <view>地址：{{land.location.province}}</view>-->
+<!--</view>-->
+<!--TODO 免责！！！！-->
+        <!--商品轮播-->
+<swiper class="screen-swiper square-dot bg-white" indicator-dots="true" circular="true" autoplay="true" interval="5000"
+        duration="500">
+    <swiper-item wx:for="{{land.picCount - 0}}" wx:key="unique">
+        <image mode="aspectFill"
+        src="cloud://cloud1-7gbhxuxd395adfde.636c-cloud1-7gbhxuxd395adfde-1310914803/lands/{{land._id}}/{{item}}.jpg"/>
+    </swiper-item>
+</swiper>
+
+        <!--商品价格-->
+<view class="bg-white canui-goods-box" style="padding-top:30px;">
+    <text class="text-price text-black text-xl">{{land.cost}}</text>
+</view>
+
+        <!--商品名称-->
+<view class="bg-white canui-goods-box canui-xzwz text-black">{{land.name}}</view>
+
+<view class="cuIcon-location"></view>
+
+        <!--商品属性-->
+<view class="bg-white grid col-4 canui-goods-box text-grey text-sm">
+    <view class="padding-sm text-center">{{land.location.city}}</view>
+    <view class="padding-sm text-center">{{smallLandType[land.type % 100].types[land.type / 100].type}}</view>
+    <view class="padding-sm text-center">{{circulationTypes[land.transfer].type}}</view>
+</view>
+
+        <!--详情-->
+<view class="cu-bar bg-white margin-top solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-green"></text>
+        <text>{{land.description}}</text>
+    </view>
+</view>
+<view class="bg-white padding cauni-details-box">{{land.details}}</view>
+
+
+        <!--TabbarBot-->
+<view class="cu-bar bg-white tabbar border canui-foor-fixed solid-bottom">
+    <view bindtap="addToMyCollection" class="action text-grey">
+        <view class="{{favor_type}}"></view>
+        收藏
+    </view>
+    <view bindtap="contactWihtOwner" class="action text-grey">
+        <view class='cuIcon-commentfill'></view>
+        联系
+    </view>
+    <view class='btn-group'>
+        <button bindtap="buyLand" class='cu-btn bg-green round shadow-blur'>购买</button>
+    </view>
+</view>

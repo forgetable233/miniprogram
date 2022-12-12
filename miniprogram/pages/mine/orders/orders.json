@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "land-displayer": "../../../components/landDisplayer/landDisplayer",
+    "headNavigator": "../../../components/headNavigator/headNavigator"
+  }
+}

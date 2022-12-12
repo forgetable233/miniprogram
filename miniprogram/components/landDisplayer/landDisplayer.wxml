@@ -1,0 +1,59 @@
+
+<!--        <navigator bindload="setUrl" class="cu-card article" :class="isCard?'no-card':''" url="{{targetUrl}}">-->
+<!--            <view bindload="setUrl" class="cu-card article" :class="isCard?'no-card':''">-->
+<!--                <view class="cu-item shadow">-->
+<!--                    <view class="title">-->
+<!--                        <view class="text-cut">{{land.name}}</view>-->
+<!--                    </view>-->
+<!--                    <view class="content">-->
+<!--                        <image src="../../images/img1.png" mode="aspectFill"/>-->
+<!--                        <view class="desc">-->
+<!--                            <view class="text-xxl">{{land.cost}}</view>-->
+<!--                            <view class="text-content">{{land.description}}</view>-->
+<!--                            <view>-->
+<!--                                <view class="cu-tag bg-red light sm round">{{land.location.province}}</view>-->
+<!--                                <view class="cu-tag bg-green light sm round">{{land.location.city}}</view>-->
+<!--                                <view class="cu-tag bg-brown light sm round">{{-->
+<!--                                    land.type === 0-->
+<!--                                    ? '耕地用地'-->
+<!--                                    : land.type === 1-->
+<!--                                    ? '园林用地'-->
+<!--                                    : land.type === 2-->
+<!--                                    ? '牧草用地'-->
+<!--                                    : '其他' }}-->
+<!--                                </view>-->
+<!--                            </view>-->
+<!--                        </view>-->
+<!--                    </view>-->
+<!--                </view>-->
+<!--            </view>-->
+<!--        </navigator>-->
+
+
+<navigator bindload="setUrl" class="cu-card article no-card" :class="isCard?'no-card':''" url="{{targetUrl}}">
+    <view class="cu-item shadow">
+        <view class="title">
+            <view class="text-cut">{{land.name}}</view>
+        </view>
+        <view class="content">
+            <image src="../../images/img1.png" mode="aspectFill"/>
+            <view class="desc">
+                <view class="text-xxl">{{land.cost}}</view>
+                <view class="text-content">{{land.description}}</view>
+                <view>
+                    <view class="cu-tag bg-red light sm round">{{land.location.province}}</view>
+                    <view class="cu-tag bg-green light sm round">{{land.location.city}}</view>
+                    <view class="cu-tag bg-brown light sm round">{{
+                        land.type === 0
+                        ? '耕地用地'
+                        : land.type === 1
+                        ? '园林用地'
+                        : land.type === 2
+                        ? '牧草用地'
+                        : '其他' }}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</navigator>

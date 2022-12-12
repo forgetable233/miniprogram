@@ -1,0 +1,1 @@
+"G:\IDE\wecht_dev_tool\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-7gbhxuxd395adfde --n quickstartFunctions --r --project "G:\code\miniprogram\finally_program" --report_first --report

@@ -1,0 +1,87 @@
+{
+  "pages": [
+    "pages/index/index/index",
+    "pages/message/chat/chat",
+    "pages/mine/mine/mine",
+    "pages/index/search/search",
+    "pages/landDetails/landDetails",
+    "pages/index/news/news",
+    "pages/mine/collection/collection",
+    "pages/mine/path/path",
+    "pages/mine/orders/orders",
+    "pages/mine/publishLand/publishLand",
+    "pages/mine/publishLand/mapInfo/mapInfo",
+    "pages/mine/about/about",
+    "pages/message/message/message",
+    "pages/orderProcess/orderProcess",
+    "pages/mine/myPost/myPost",
+    "pages/mine/myApply/myApply",
+    "pages/mine/applyToMy/applyToMy",
+    "pages/mine/applyDetails/applyDetails"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-tree-select": "@vant/weapp/tree-select/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-overlay": "@vant/weapp/overlay/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/tabbar/indexCheck.png",
+        "iconPath": "images/tabbar/index.png",
+        "pagePath": "pages/index/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/tabbar/messageCheck.png",
+        "iconPath": "images/tabbar/message.png",
+        "pagePath": "pages/message/message/message",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "images/tabbar/mineCheck.png",
+        "iconPath": "images/tabbar/mine.png",
+        "pagePath": "pages/mine/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

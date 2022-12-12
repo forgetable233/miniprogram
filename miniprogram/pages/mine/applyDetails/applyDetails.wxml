@@ -1,0 +1,12 @@
+<headNavigator titleText="申请人信息"/>
+<block wx:for="{{applicants}}" wx:for-item="hire">
+    <van-swipe-cell right-width="{{65}}" left-width="{{65}}">
+        <view bindtap="refuseApply" data-id="{{hire._id}}" class="van-swipe-cell__left" slot="left">拒绝</view>
+        <van-cell-group>
+            <van-cell center title="用户名称：{{hire.applier.nickname}}">
+                <image src="{{hire.applier.avatarUrl}}" slot="icon" class="headPicture"></image>
+            </van-cell>
+        </van-cell-group>
+        <view bindtap="acceptApply" class="van-swipe-cell__right" slot="right">通过</view>
+    </van-swipe-cell>
+</block>

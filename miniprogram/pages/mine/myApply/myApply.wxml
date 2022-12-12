@@ -1,0 +1,2 @@
+<headNavigator titleText="我的申请"/>
+<van-empty wx:if="{{!havePostedApply}}" image="error" description="您尚未发送申请"/>

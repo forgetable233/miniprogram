@@ -1,0 +1,8 @@
+<headNavigator titleText="订单"/>
+<!--<navigator url="">fortest</navigator>-->
+<!--TODO 更改显示土地的逻辑-->
+<view wx:if="{{all_hired.length > 0}}">
+<!--    <view bindtap="getAll">test!!!</view>-->
+    <land-displayer wx:for="{{all_hired}}" wx:key="_id" land="{{item}}" cardType="order"/>
+</view>
+<van-empty wx:if="{{all_hired.length === 0}}" image="error" description="您尚未有订单"/>

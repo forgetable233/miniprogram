@@ -1,0 +1,12 @@
+<headNavigator titleText="购买申请"/>
+<van-empty wx:if="{{!haveApply}}" image="error" description="您尚未收到申请"/>
+<view wx:else>
+    <view wx:for="{{allApply}}" wx:for-item="apply" wx:key="_id">
+        <van-card wx:if="{{apply.hire.length !== 0}}" bindtap="jumpToApplyer" data-id="{{apply._id}}" price="{{apply.cost}}"
+                  desc="{{apply.description}}"
+                  title="{{apply.name}}"
+                  thumb="../../../../images/img1.png" tag="{{apply.hire.length}}"
+                  thumb-mode="aspectFill">
+        </van-card>
+    </view>
+</view>

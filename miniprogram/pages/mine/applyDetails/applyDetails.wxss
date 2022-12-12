@@ -1,0 +1,70 @@
+.van-swipe-cell__left {
+    width: 130rpx;
+    height: 100%;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #f44;
+    word-wrap: break-word;
+    padding: 0 22rpx;
+    box-sizing: border-box;
+    /*文本垂直居中*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.van-swipe-cell__right {
+    width: 130rpx;
+    height: 100%;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    background-color: green;
+    word-wrap: break-word;
+    padding: 0 22rpx;
+    box-sizing: border-box;
+    /*文本垂直居中*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.van-cell__value {
+    color: #e6210c;
+    font-weight: bold;
+    font-size: 1rem;
+    overflow: hidden;
+    text-align: right;
+    line-height: 3.0625rem;
+    flex: 1;
+    position: relative;
+    vertical-align: middle;
+}
+
+.van-cell__title {
+    position: relative;
+    flex: 2;
+}
+
+.c1 {
+    width: 0.625rem;
+    height: 0.625rem;
+}
+
+.van-cell__label[data-v-5ff568b8] {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    padding-left: 4.3rem;
+}
+
+.custom-text {
+    font-size: 1.2rem;
+    margin-left: 4.3rem;
+}
+
+.headPicture {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
